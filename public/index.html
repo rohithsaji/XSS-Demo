@@ -34,45 +34,45 @@
 			callback(null, results);
 		}
 
-		function showQueryAndResults(q, results) {
+		// function showQueryAndResults(q, results) {
 
-			var resultsEl = document.querySelector('#results');
-			var html = '';
+		// 	var resultsEl = document.querySelector('#results');
+		// 	var html = '';
 
-			html += '<p>Your search query:</p>';
-			html += '<pre>' + q + '</pre>';
-			html += '<ul>';
+		// 	html += '<p>Your search query:</p>';
+		// 	html += '<pre>' + q + '</pre>';
+		// 	html += '<ul>';
 
-			for (var index = 0; index < results.length; index++) {
-				html += '<li>' + results[index] + '</li>';
-			}
+		// 	for (var index = 0; index < results.length; index++) {
+		// 		html += '<li>' + results[index] + '</li>';
+		// 	}
 
-			html += '</ul>';
+		// 	html += '</ul>';
 
-			resultsEl.innerHTML = html;
-		}
+		// 	resultsEl.innerHTML = html;
+		// }
 
 //Comment the above function and uncomment the below funciton to prevent XSS in the site
 
-// function showQueryAndResults(q, results) {
-// 	var resultsEl = document.querySelector('#results');
-// 	var html = '';
+function showQueryAndResults(q, results) {
+	var resultsEl = document.querySelector('#results');
+	var html = '';
 
-// 	html += '<p>Your search query:</p>';
-// 	html += '<pre></pre>';
-// 	html += '<ul>';
+	html += '<p>Your search query:</p>';
+	html += '<pre></pre>';
+	html += '<ul>';
 
-// 	for (var index = 0; index < results.length; index++) {
-// 		html += '<li>' + results[index] + '</li>';
-// 	}
+	for (var index = 0; index < results.length; index++) {
+		html += '<li>' + results[index] + '</li>';
+	}
 
-// 	html += '</ul>';
+	html += '</ul>';
 
-// 	resultsEl.innerHTML = html;
+	resultsEl.innerHTML = html;
 
-// 	var queryTextEl = document.querySelector('#results pre');
-// 	queryTextEl.textContent = q;
-// }
+	var queryTextEl = document.querySelector('#results pre');
+	queryTextEl.textContent = q;
+}
 		function getQueryParameter(name) {
 
 			var pairs = window.location.search.substring(1).split('&');
